@@ -4,24 +4,20 @@ namespace Encapsulation
 {
     class Product
     {
-        //Every attribute is defined as private
+        // The auto-properties are a simplified way to declare properties that do not require  a particular logic for get and set operations. 
         private string _name;
-        private double _price;
-        private int _quantity;
+        public double Price { get; private set; }
+        public double Quantity { get; set; }
+
         public Product()
         {
         }
         public Product(string name, double price, int quantity)
         {
             _name = name;
-            _price = price;
-            _quantity = quantity;
-        }
-
-        /*A property is a member that offers a flexible mechanism for reading, writing, or calculating the value of a particular field.
-         * Properties can be used as if they were public attributes, but in fact they are special methods called "accessors".
-         * This allows data to be accessed easily and also helps to promote the security and flexibility of the methods.*/
-
+            Price = price;
+            Quantity = quantity;
+        }   
         public string Name
         {
             get { return _name; }
@@ -33,33 +29,25 @@ namespace Encapsulation
                 }
             }
         }
-        public double Price
-        {
-            get { return _price; }
-        }
-        public int Quantity
-        {
-            get { return _quantity; }
-        }
         public double TotalValueInStock
         {
-            get { return _price * _quantity; }
+            get { return Price * Quantity; }
         }
         public void AddProducts(int quantity)
         {
-            _quantity += quantity;
+            Quantity += quantity;
         }
         public void RemoveProducts(int quantity)
         {
-            _quantity -= quantity;
+            Quantity -= quantity;
         }
         public override string ToString()
         {
             return _name
             + ", U$ "
-            + _price.ToString("F2", CultureInfo.InvariantCulture)
+            + Price.ToString("F2", CultureInfo.InvariantCulture)
             + ", "
-            + _quantity
+            + Quantity
             + " units, Total: U$ "
             + TotalValueInStock.ToString("F2", CultureInfo.InvariantCulture);
         }
