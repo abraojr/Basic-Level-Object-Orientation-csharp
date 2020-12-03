@@ -17,29 +17,33 @@ namespace Encapsulation
             _price = price;
             _quantity = quantity;
         }
-        //Get and Set methods are implemented for each attribute, according to business rules
-        public string GetName()
+
+        /*A property is a member that offers a flexible mechanism for reading, writing, or calculating the value of a particular field.
+         * Properties can be used as if they were public attributes, but in fact they are special methods called "accessors".
+         * This allows data to be accessed easily and also helps to promote the security and flexibility of the methods.*/
+
+        public string Name
         {
-            return _name;
-        }
-        public void SetName(string name)
-        {
-            if (name != null && name.Length > 1)
+            get { return _name; }
+            set
             {
-                _name = name;
+                if (value != null && value.Length > 1)
+                {
+                    _name = value;
+                }
             }
         }
-        public double GetPrice()
+        public double Price
         {
-            return _price;
+            get { return _price; }
         }
-        public int GetQuantity()
+        public int Quantity
         {
-            return _quantity;
+            get { return _quantity; }
         }
-        public double TotalValueInStock()
+        public double TotalValueInStock
         {
-            return _price * _quantity;
+            get { return _price * _quantity; }
         }
         public void AddProducts(int quantity)
         {
@@ -57,7 +61,7 @@ namespace Encapsulation
             + ", "
             + _quantity
             + " units, Total: U$ "
-            + TotalValueInStock().ToString("F2", CultureInfo.InvariantCulture);
+            + TotalValueInStock.ToString("F2", CultureInfo.InvariantCulture);
         }
     }
 }

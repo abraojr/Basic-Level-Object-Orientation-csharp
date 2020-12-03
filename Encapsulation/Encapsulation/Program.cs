@@ -13,11 +13,12 @@ namespace Encapsulation
 
             Product p = new Product("TV", 900.00, 10);
 
-            p.SetName("TV 4K");
+            p.Name="TV 4K";
+            p.Name="T";
 
-            Console.WriteLine("Product name: " + p.GetName());// OUTPUT: TV 4K
-            Console.WriteLine("Product price: U$ " + p.GetPrice());
-            Console.WriteLine("Product quantity in inventory: " + p.GetQuantity());
+            Console.WriteLine("Product name: " + p.Name);// OUTPUT: TV 4K
+            Console.WriteLine("Product price: U$ " + p.Price);
+            Console.WriteLine("Product quantity in inventory: " + p.Quantity);
             Console.WriteLine("----------------------------------------------------------");
 
             Console.Write("Enter the number of products to be added to inventory: ");
