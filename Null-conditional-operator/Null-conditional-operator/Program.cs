@@ -12,8 +12,8 @@ namespace Null_conditional_operator
             double a = x ?? 5;
             double b = y ?? 5;
 
-            Console.WriteLine(a);
-            Console.WriteLine(b);
+            Console.WriteLine(a); //OUTPUT: 5
+            Console.WriteLine(b); //OUTPUT: 10
         }
     }
 }
